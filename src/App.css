@@ -9,12 +9,12 @@
   margin: auto 0;
 }
 
-.fa-quote-left {
-  transition: 1s;
-}
-
-#text, #author {
-  transition: 1s;
+#quote-box {
+  border-radius:3px;
+  padding:40px 50px;
+  background-color:#fff;
+  width: 30vw;
+  margin-top: 25vh;
 }
 
 .quote-text {
@@ -26,6 +26,10 @@
 
 }
 
+.fa-quote-left {
+  transition: 1s;
+}
+
 .quote-author {
   padding-top:20px;
   font-size:1em;
@@ -33,13 +37,14 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+#text, #author {
+  transition: 1s;
+}
 
-#quote-box {
-  border-radius:3px;
-  padding:40px 50px;
-  background-color:#fff;
-  width: 30vw;
-  margin-top: 25vh;
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 .button {
@@ -54,8 +59,8 @@
   transition: 1s;
 }
 
-button:hover {
-  opacity:0.8;
+.button:hover {
+  opacity:0.6;
 }
 
 #tweet-quote {
@@ -67,27 +72,12 @@ button:hover {
   width:40px;
 }
 
-#new-quote {
-  float:right;
-}
-
-.buttons {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-.footer {
-  width: 450px;
-  text-align: center;
-  display: block;
-  margin: 15px auto 30px auto;
-  font-size: 0.8em;
-  color: #fff;
-}
-
 .fa-twitter {
   padding: 0 10px;
+}
+
+#new-quote {
+  float:right;
 }
 
 @media only screen and (max-width: 840px) {
