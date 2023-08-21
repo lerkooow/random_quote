@@ -40,7 +40,6 @@ function App() {
 
   const getRandomQuote = () => {
     const newIndex = Math.floor(Math.random() * quotes.length);
-    console.log("🚀 ~ file: App.js:31 ~ getRandomQuote ~ newIndex:", newIndex)
     setQuoteIndex(newIndex);
   };
 
@@ -51,46 +50,43 @@ function App() {
   };
 
   const currentQuote = quotes[quoteIndex];
-  console.log("🚀 ~ file: App.js:42 ~ App ~ currentQuote:", currentQuote)
 
   const backgroundColorStyle = { backgroundColor: backgroundColor };
   const colorStyle = { color: textColor };
 
 
   return (
-    <div className="wrapper" style={backgroundColorStyle}>
-      <div className="body">
-        <div className="App">
-          <div className="quote-box">
-            {currentQuote && <>
-              <div className="quote-text">
-                <i className="fa fa-quote-left" style={colorStyle}></i>
-                <span style={colorStyle} id="text"> {currentQuote.text}</span>
-              </div>
-              <div className="quote-author">
-                <span style={colorStyle} id="author">- {currentQuote.author}</span>
-              </div></>}
-            <div className="buttons">
-              <a
-                className="button"
-                id="tweet-quote"
-                href="https://twitter.com/intent/tweet"
-                title="Tweet this quote!"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={backgroundColorStyle}
-              >
-                <i class="fa-brands fa-twitter"></i>
-              </a>
-              <button type="button"
-                className="button"
-                id="new-quote"
-                onClick={() => { getRandomQuote(); changeColors(); }}
-                style={backgroundColorStyle}>New quote</button>
+    <div className="App" style={backgroundColorStyle}>
+      <div className="wrapper">
+        <div id="quote-box">
+          {currentQuote && <>
+            <div className="quote-text">
+              <i className="fa fa-quote-left" style={colorStyle}></i>
+              <span style={colorStyle} id="text"> {currentQuote.text}</span>
             </div>
+            <div className="quote-author">
+              <span style={colorStyle} id="author">- {currentQuote.author}</span>
+            </div></>}
+          <div className="buttons">
+            <a
+              className="button"
+              id="tweet-quote"
+              href="https://twitter.com/intent/tweet"
+              title="Tweet this quote!"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={backgroundColorStyle}
+            >
+              <i className="fa-brands fa-twitter"></i>
+            </a>
+            <button type="button"
+              className="button"
+              id="new-quote"
+              onClick={() => { getRandomQuote(); changeColors(); }}
+              style={backgroundColorStyle}>New quote</button>
           </div>
         </div>
-      </div >
+      </div>
     </div>
   );
 }

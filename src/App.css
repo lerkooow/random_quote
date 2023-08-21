@@ -1,10 +1,12 @@
-.wrapper {
-  min-width: 100vw;
-  min-height: 100vh;
+.App {
+  width: 100vw;
+  height: 100vh;
 }
 
-.body {
-  transition: 2s;
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin: auto 0;
 }
 
 .fa-quote-left {
@@ -15,62 +17,64 @@
   transition: 1s;
 }
 
-.quote-box {
+.quote-text {
+  display: flex;
+  gap: 10px;
+  font-family: 'Montserrat', sans-serif;
+  text-align:center;
+  font-size:1.65em;
+
+}
+
+.quote-author {
+  padding-top:20px;
+  font-size:1em;
+  text-align:right;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+#quote-box {
   border-radius:3px;
-  margin: auto;
   padding:40px 50px;
-  display:table;
   background-color:#fff;
-  position: relative;
-  top: 240px;
+  width: 30vw;
+  margin-top: 25vh;
+}
 
-  .quote-text {
-      font-size:1.0em;
-      font-family: 'Montserrat', sans-serif;
-      margin-right: 0.4em;
-      color: white;
-      text-align:center;
-      width:450px;
-      height:auto;
-      clear:both;
-      font-weight:500;
-      font-size:1.75em;
+.button {
+  height:38px;
+  border:none;
+  border-radius:3px;
+  font-size:0.85em;
+  margin-top:30px;
+  cursor:pointer;
+  width: 120px;
+  color: white;
+  transition: 1s;
+}
 
-  }
-  .quote-author {
-    padding-top:20px;
-    font-size:1em;
-    text-align:right;
-    font-family: 'Montserrat', sans-serif;
-  }
-  .buttons {
-    .button {
-      height:38px;
-      border:none;
-      border-radius:3px;
-      font-size:0.85em;
-      padding: 8px 18px 6px 18px;
-      margin-top:30px;
-      cursor:pointer;
-      width: 120px;
-      color: white;
-      transition: 1s;
-      &:hover {
-        opacity:0.8;
-      }
-      &#tweet-quote{
-        float:left;
-        padding:0px;
-        padding-top:8px;
-        text-align:center;
-        height:30px;
-        width:40px;
-      }
-      &#new-quote {
-        float:right;
-      }
-    }
-  }
+button:hover {
+  opacity:0.8;
+}
+
+#tweet-quote {
+  float:left;
+  padding:0px;
+  padding-top:8px;
+  text-align:center;
+  height:30px;
+  width:40px;
+}
+
+#new-quote {
+  float:right;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 .footer {
@@ -80,4 +84,25 @@
   margin: 15px auto 30px auto;
   font-size: 0.8em;
   color: #fff;
+}
+
+.fa-twitter {
+  padding: 0 10px;
+}
+
+@media only screen and (max-width: 840px) {
+  .quote-text {
+    font-size: 1em;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .quote-author {
+    font-size: 0.75em;
+  }
+  #new-quote {
+    font-size: 0.65em;
+  }
+  .fa-quote-left {
+    font-size: 20px;
+  }
 }
